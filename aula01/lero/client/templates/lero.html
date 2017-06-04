@@ -1,0 +1,22 @@
+<template name="lero">
+    <h5>
+        <button class="remove">&times;</button>
+        {{ autor }}
+    </h5>
+    <p>
+        {{ texto }}
+    </p>  
+    
+    <div class="input-field">
+        <textarea id="comentario" class="materialize-textarea"></textarea>
+        <label for="comentario">Comentário</label>
+    </div>
+
+    <button class="save">enviar</button>      
+
+    <ul>
+    {{# each comentarios }}
+        <li>{{ texto }}</li>
+    {{/ each}}
+    </ul>
+</template>

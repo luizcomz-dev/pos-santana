@@ -1,0 +1,22 @@
+<template name="leroList">
+
+    <form id="cadLeros" action="">
+        <div class="input-field">
+          <input placeholder="Placeholder" name="autor" type="text">
+          <label for="autor">Autor</label>
+        </div>
+
+        <div class="input-field">
+          <textarea name="texto" class="materialize-textarea"></textarea>
+          <label for="texto">Lero</label>
+        </div>
+
+        <button type="submit" class="waves-effect waves-light btn">
+            Adicionar Lero
+        </button>
+    </form>
+
+    {{# each leros }}
+        {{> lero }}             
+    {{/ each }}
+</template>
