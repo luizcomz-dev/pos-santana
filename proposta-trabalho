@@ -1,0 +1,8 @@
+Desenvolver aplicativo de chat.
+
+RQ 01 - Deverá conter uma tela inicial com listagem das salas e campo formulário para cadastrar nova sala.
+RQ 02 - Ao clicar em uma sala, redirecionar para a tela específica onde estarao listados os usuários logados nesta sala e as mensagens trocadas entre eles
+RQ 03 - Deverá haver uma tela de login
+RQ 04 - Deverá haver uma tela de registro de novos usuarios
+
+Obs.: Devem ser removidos os pacotes 'autopublish' e 'insecure' do projeto utilizando os métodos e publicaçoes do Meteor.
