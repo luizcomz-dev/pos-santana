@@ -3,6 +3,10 @@ import { Lero } from '/collections/leros.js';
 
 import './lero-list.html';
 
+Template.leroList.onCreated(() => {
+    Meteor.subscribe('leros');
+});
+
 Template.leroList.helpers({
     leros() {
         return Lero.find({});
@@ -16,14 +20,13 @@ Template.leroList.events({
         let target = ev.target;
 
         let lero = {
-            autor: target.autor.value,
+            autor: Meteor.userId(),
             texto: target.texto.value,
             comentarios: []
         };
 
-        Lero.insert(lero);
-
-        target.autor.value = '';
+        Meteor.call('createLero', lero);
+        
         target.texto.value = '';
     }
 });

@@ -18,15 +18,9 @@
 </head>
 
 <body>
-  {{> header }}
+ 
 
-  <div id="content" class="container">
-    <div class="row">
-      {{> leroList }}
-    </div>
-  </div>
 
-  {{> footer }}
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -34,3 +28,31 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </body>
+
+<template name="mainLayout">
+   {{> header }}
+
+  {{# if currentUser }}
+
+  <div id="content" class="container">
+    <div class="row">
+      <h5>{{ currentUser._id }} 
+        <button id="logout">Sair</button>
+      </h5>
+      {{> Template.dynamic template=main }}    
+      </div>
+  </div>
+
+  {{ else }}
+
+  <div id="content" class="container">
+    <div class="row">
+      {{> login }}  
+      </div>
+  </div>
+
+    
+  {{/ if }}
+
+  {{> footer }}
+</template>

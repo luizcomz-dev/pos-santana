@@ -1,10 +1,11 @@
 <template name="lero">
+    <a href="/">Volvar à listagem</a>
     <h5>
         <button class="remove">&times;</button>
-        {{ autor }}
+        {{ lero.autor }}
     </h5>
     <p>
-        {{ texto }}
+        {{ lero.texto }}
     </p>  
     
     <div class="input-field">
@@ -15,7 +16,7 @@
     <button class="save">enviar</button>      
 
     <ul>
-    {{# each comentarios }}
+    {{# each lero.comentarios }}
         <li>{{ texto }}</li>
     {{/ each}}
     </ul>
